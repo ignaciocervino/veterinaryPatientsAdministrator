@@ -10,20 +10,27 @@ function App() {
 
   //State de la app
   const [citas,guardarCitas] = useState([]);
+  const [consultar,guardarConsultar] = useState(true);//Esta como true porque quiero que la primera vez consulte la api
 
   useEffect(()=>{//Buen lugar para consumir una API externa
-    const consultarAPI = ()=>{
-      clienteAxios.get('/pacientes')
-        .then(respuesta=>{
-            //Colocar en el state el resultado
-            guardarCitas(respuesta.data);
-        })
-        .catch(error=>{
-          console.log(error);
-        })
+    if (consultar) {
+      const consultarAPI = ()=>{
+        clienteAxios.get('/pacientes')
+          .then(respuesta=>{
+              //Colocar en el state el resultado
+              guardarCitas(respuesta.data);
+
+              //Deshabilitar consulta
+              guardarConsultar(false);
+          })
+          .catch(error=>{
+            console.log(error);
+          })
+      }
+      consultarAPI();
     }
-    consultarAPI();
-  },[]);//[] son las dependecias
+    
+  },[consultar]);//[] son las dependecias
 
   return (
     <Router>
@@ -37,7 +44,7 @@ function App() {
         <Route 
           exact 
           path="/nueva"
-          component = {NuevaCita}
+          component = {()=><NuevaCita guardarConsultar={guardarConsultar} />}
         />
 
       <Route 
