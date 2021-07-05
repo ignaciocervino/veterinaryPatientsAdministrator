@@ -50,7 +50,15 @@ function App() {
       <Route 
           exact 
           path="/cita/:id"
-          component = {Cita}
+          render={(props)=>{
+            //higher order function
+            const cita = citas.filter(cita=>cita._id === props.match.params.id)
+            return(
+              <Cita
+                cita={cita[0]}
+              />
+            )
+          }}
         />    
       </Switch>
     </Router>
