@@ -4,11 +4,13 @@
   "description": "Aplicacion de ELectron",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist" : "electron-builder -w"
   },
   "author": "Ignacio Cerviño",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^13.1.5"
+    "electron": "^13.1.5",
+    "electron-builder": "^22.11.7"
   }
 }

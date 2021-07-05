@@ -1,4 +1,5 @@
 /API/node_modules/
 /frontend/node_modules/
 /Desktop/node_modules/
+/Desktop/dist/
 /frontend/.env.development

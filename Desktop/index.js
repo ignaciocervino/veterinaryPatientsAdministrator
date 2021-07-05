@@ -10,6 +10,7 @@ function crearVentana(){
         minHeight: 600,
         center: true,
         show: false,//Para que no se cargue hasta que este lista
+        icon:'icon.png'
 
 
     });
