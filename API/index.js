@@ -14,9 +14,10 @@ mongoose.connect('mongodb://localhost/veterinaria',{
     useFindAndModify: false
 });
 
+
 //habilitar el body-parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}));
 
 // habilitar routing
 app.use('/',routes());//Middelwares de express
