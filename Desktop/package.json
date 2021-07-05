@@ -1,0 +1,14 @@
+{
+  "name": "fullstackjs-desktop",
+  "version": "1.0.0",
+  "description": "Aplicacion de ELectron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ignacio Cerviño",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.5"
+  }
+}
