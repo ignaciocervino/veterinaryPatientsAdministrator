@@ -4,6 +4,13 @@ let appWindow;
 //Ventana principal del proyecto
 function crearVentana(){
     appWindow = new BrowserWindow({
+        width: 1200,//son px
+        height: 800,
+        minWidth: 800,
+        minHeight: 600,
+        center: true,
+        show: false,//Para que no se cargue hasta que este lista
+
 
     });
 
