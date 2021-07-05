@@ -21,11 +21,15 @@ module.exports = function(){
 
 
     //Actualizar un registro
-    // Obtiene un paciente en especifico
     router.put('/pacientes/:id',
         pacienteController.actualizarPaciente
     );
 
-    
+    //Elimina un registro
+    router.delete('/pacientes/:id',
+        pacienteController.eliminarPaciente
+    );
+
+
     return router;
 }

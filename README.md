@@ -1,3 +1,3 @@
 # veterinaryPatientsAdministrator
 
-Creating a API with MongoDB and Express
+Creating a REST API with MongoDB and Express
