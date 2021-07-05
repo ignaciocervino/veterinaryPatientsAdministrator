@@ -44,18 +44,19 @@ function App() {
         <Route 
           exact 
           path="/nueva"
-          component = {()=><NuevaCita guardarConsultar={guardarConsultar} />}
+          component = {()=> <NuevaCita guardarConsultar={guardarConsultar} />}
         />
 
       <Route 
           exact 
           path="/cita/:id"
-          render={(props)=>{
+          render={(props) => {
             //higher order function
-            const cita = citas.filter(cita=>cita._id === props.match.params.id)
+            const cita = citas.filter(cita => cita._id === props.match.params.id)
             return(
               <Cita
-                cita={cita}
+                cita={cita[0]}
+                guardarConsultar={guardarConsultar}
               />
             )
           }}
