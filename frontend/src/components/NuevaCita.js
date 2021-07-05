@@ -89,6 +89,7 @@ const NuevaCita = (props) => {
                                     className="form-control form-control-lg" 
                                     id="fecha" 
                                     name="fecha"  
+                                    onChange={actualizarState}
                                 />
                             </div>
 
@@ -99,6 +100,7 @@ const NuevaCita = (props) => {
                                     className="form-control form-control-lg" 
                                     id="hora" 
                                     name="hora"  
+                                    onChange={actualizarState}
                                 />
                             </div>
 
@@ -108,6 +110,7 @@ const NuevaCita = (props) => {
                                     className="form-control" 
                                     name="sintomas" 
                                     rows="6"
+                                    onChange={actualizarState}
                                 ></textarea>
                             </div>
 
