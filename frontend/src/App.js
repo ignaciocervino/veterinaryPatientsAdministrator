@@ -15,7 +15,8 @@ function App() {
     const consultarAPI = ()=>{
       clienteAxios.get('/pacientes')
         .then(respuesta=>{
-
+            //Colocar en el state el resultado
+            guardarCitas(respuesta.data);
         })
         .catch(error=>{
           console.log(error);
@@ -30,7 +31,7 @@ function App() {
         <Route 
           exact 
           path="/"
-          component = {Pacientes}
+          component = {()=> <Pacientes citas={citas} />}
         />
 
         <Route 
