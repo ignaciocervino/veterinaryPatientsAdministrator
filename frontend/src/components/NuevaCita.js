@@ -1,6 +1,27 @@
-import React, { Fragment} from 'react';
+import React, { Fragment,useState} from 'react';
 import {Link} from 'react-router-dom';
 const NuevaCita = () => {
+    //Generar state como objeto
+    const [cita,guardarCita] = useState({
+        nombre: '',
+        propietario: '',
+        fecha: '',
+        hora: '',
+        telefono: '',
+        sintomas: '',
+    });
+
+    //Lea los datos del form
+    const actualizarState = e=>{
+        guardarCita({
+            ...cita,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    //Enviar una peticion a la API
+
+
     return ( 
         <Fragment>
             <h1 className="my-5">Crear nueva cita</h1>
@@ -20,6 +41,7 @@ const NuevaCita = () => {
                                     id="nombre" 
                                     name="nombre" 
                                     placeholder="Nombre Mascota" 
+                                    onChange={actualizarState}
                                 />
                             </div>
 
@@ -31,6 +53,7 @@ const NuevaCita = () => {
                                     id="propietario" 
                                     name="propietario" 
                                     placeholder="Nombre Propietario" 
+                                    onChange={actualizarState}
                                 />
                             </div>
 
@@ -42,6 +65,7 @@ const NuevaCita = () => {
                                     id="telefono" 
                                     name="telefono" 
                                     placeholder="Teléfono" 
+                                    onChange={actualizarState}
                                 />
                             </div>
 

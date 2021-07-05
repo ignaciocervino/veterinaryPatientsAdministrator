@@ -22,6 +22,10 @@ const pacientesSchema = new Schema({
     sintomas: {
         type: String,
         trim: true
+    },
+    telefono: {
+        type: String,
+        trim: true
     }
 });
 
