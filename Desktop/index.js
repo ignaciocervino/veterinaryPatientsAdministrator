@@ -12,7 +12,6 @@ function crearVentana(){
         show: false,//Para que no se cargue hasta que este lista
         icon:'icon.png'
 
-
     });
 
     //Cuando la aplicacion es cerrada
